@@ -18,7 +18,7 @@ const ENDOFPROMPT: &'static str = "<|endofprompt|>";
 
 #[wasm_bindgen(typescript_custom_section)]
 const TS_APPEND_CONTENT: &'static str = r#"
-export type TiktokenEmbedding = "gpt2" | "r50k_base" | "p50k_base" | "p50k_edit" | "cl100k_base"; 
+export type TiktokenEncoding = "gpt2" | "r50k_base" | "p50k_base" | "p50k_edit" | "cl100k_base"; 
 export type TiktokenModel =
     | "text-davinci-003"
     | "text-davinci-002"
@@ -55,8 +55,8 @@ export type TiktokenModel =
 
 #[wasm_bindgen]
 extern "C" {
-    #[wasm_bindgen(typescript_type = "TiktokenEmbedding")]
-    pub type TiktokenEmbedding;
+    #[wasm_bindgen(typescript_type = "TiktokenEncoding")]
+    pub type TiktokenEncoding;
 
     #[wasm_bindgen(typescript_type = "TiktokenModel")]
     pub type TiktokenModel;
@@ -168,7 +168,7 @@ impl Tiktoken {
 }
 
 #[wasm_bindgen]
-pub fn get_encoding(encoding: TiktokenEmbedding) -> Tiktoken {
+pub fn get_encoding(encoding: TiktokenEncoding) -> Tiktoken {
     Tiktoken::new(encoding.as_string().unwrap().as_str())
 }
 
