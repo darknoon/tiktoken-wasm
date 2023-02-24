@@ -1,6 +1,6 @@
 {
-  "name": "@dqbd/tiktoken",
-  "version": "0.3.0",
+  "name": "@darknoon/tiktoken",
+  "version": "0.3.0-alpha.1",
   "description": "Javascript bindings for tiktoken",
   "files": [
     "dist/**/*",
